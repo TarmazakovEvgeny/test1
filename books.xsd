@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:simpleType name="lang_data">
+  <xs:restriction base="xs:string">
+  <xs:length value="2"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:simpleType name="cover_data">
+  <xs:restriction base="xs:string">
+  <xs:enumeration value="paperback"/>
+  <xs:enumeration value="hardback"/>
+  </xs:restriction>
+</xs:simpleType>
+
+<xs:element name="bookstore" type="shop"/>
+  <xs:complexType name="shop">
+     <xs:sequence>
+       <xs:element name="book">
+         <xs:complexType>
+           <xs:sequence>
+
+              <xs:element  name="title">
+	        <xs:simpleType>
+                  <xs:restriction base="xs:string"> 
+                    <xs:minLength value="2"/>
+                    <xs:maxLength value="30"/>    
+                  </xs:restriction>  
+                </xs:simpleType>
+	      <xs:attribute name="lang" type="lang_data" use="required"/>
+              </xs:element>
+
+              <xs:element  name="author">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string"> 
+                    <xs:minLength value="2"/>
+                    <xs:maxLength value="30"/>    
+                  </xs:restriction>  
+                </xs:simpleType>
+	      </xs:element>
+
+              <xs:element  name="year">
+                <xs:simpleType>
+                  <xs:restriction base="xs:integer"> 
+                    <xs:minInclusive = "1900">  
+		    <xs:maxInclusive = "2014">
+                  </xs:restriction>  
+                </xs:simpleType>
+              </xs:element>
+
+              <xs:element  name="price">
+                <xs:simpleType>
+                  <xs:restriction base="xs:integer"> 
+                    <xs:minExclusive = "0"/>  
+                  </xs:restriction>  
+                </xs:simpleType>
+              </xs:element>
+
+	   </xs:sequence>
+	   <xs:attribute name="category" use="required"/>
+	   <xs:attribute name="cover" type ="cover_data"/>
+         </xs:complexType>
+       </xs:element>
+     </xs:sequence>
+  </xs:complexType>
+</xs:element>
+</xs:schema>
