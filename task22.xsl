@@ -3,12 +3,12 @@
 <xsl:output method="text"/>
 <xsl:template match="/">
 <xsl:for-each select="//book">
+<xsl:value-of select="title"/>  
 <xsl:if test ="count(author)>1">
-  <xsl:element name="title">
-    <xsl:value-of select="concat(string(//book/title),string('*'))"/>
-  </xsl:element>
+<xsl:text>*</xsl:text>
 </xsl:if>
-<xsl:value-of select="title"/>
+<xsl:text>
+</xsl:text>
 </xsl:for-each>
 </xsl:template>
 </xsl:stylesheet>
