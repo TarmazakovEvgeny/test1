@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+  <book title="Everyday Italian" year="2005">
+    <author name="Giada De Laurentiis"></author>
+  </book>
+  <book title="Harry Potter" year="2005">
+    <author name="J K. Rowling"></author>
+  </book>
+  <book title="XQuery Kick Start" year="2003">
+    <author name="James McGovern"></author>
+    <author name="Per Bothner"></author>
+    <author name="Kurt Cagle"></author>
+    <author name="James Linn"></author>
+    <author name="Vaidyanathan Nagarajan"></author>
+  </book>
+  <book title="Learning XML" year="2003">
+    <author name="Erik T. Ray"></author>
+  </book>
+</library>
